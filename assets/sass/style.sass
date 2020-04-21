@@ -1,0 +1,524 @@
+@import "constants.sass"
+@import "components.sass"
+@import "typografy.sass"
+
+
+// ДОБАВИТЬ В КОНТЕЙНЕР ОТСТУПЫ PADDING
+// и удалить в других местах
+// + отдельный класс с центрированием туда же 
+// Main styles
+* 
+	box-sizing: border-box
+body
+	padding: 0
+	margin: 0
+	color: black
+.container 
+	padding: 0 8%
+.container.standart-layout
+	padding-top: 5rem
+	display: flex
+	flex-direction: column
+	flex-wrap: wrap
+	align-items: center
+	text-align: center
+	padding-bottom: 5rem
+a:hover, a
+	color: inherit
+	text-decoration: none
+// HEADER
+.header__top
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	align-items: center
+	flex-wrap: wrap
+.menu
+	display: inline-block
+	&__list
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+	li 
+		padding: 1rem
+		list-style-type: none
+.header__content
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	text-align: center
+	height: 40rem
+	padding: 0 .5rem
+	background: url("../img/header_bg.png") center no-repeat
+	background-size: cover
+	h1
+		display: inline
+.header__buttons
+	margin: 4rem
+	button
+		margin: 1rem
+
+
+//	Abous us
+.about-us
+	&__cards
+		margin-top: 5rem
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		justify-content: space-around
+.card
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
+	align-items: center
+	margin: .8rem
+	width: 30%
+	min-width: 310px
+.card__icon
+	margin-bottom: 1rem
+	width: 3rem
+	height: auto
+
+// Our Services
+.our-services
+	background-color: $primary-light
+	.card
+		background-color: white
+		padding: 3rem 2rem 3rem 2rem
+	&__card:hover
+		background-color: $primary-color
+		color: white
+		box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.35)
+		transition: $duration
+	&__card:hover .card__icon-svg
+		filter: invert(100%)
+		transition: $duration
+	&__card:hover .button-second--card
+		border-color: white
+		color: white
+		transition: $duration
+	&__cards
+		margin-top: 3rem
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		justify-content: space-around
+	button
+		margin-top: 3rem
+.button-second--card
+	color: black
+	border-color: black
+button.button-second.button-second--card:hover
+	color: $primary-color
+.card__icon-svg
+	margin-left: .7rem
+
+// Latest Works
+.latest-works
+	&__navigation
+		margin-top: 4rem
+	&__navigation button
+		margin: .3rem
+	&__items
+		margin-top: 3rem
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		justify-content: space-around
+		margin-bottom: 3rem
+.item
+	margin: .8rem
+	width: 30%
+	min-width: 310px
+	position: relative
+	overflow: hidden
+	&__tooltip
+		position: absolute
+		width: 100%
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		transform: translateY(200%)
+		z-index: -1
+		font-size: 0
+		color: white
+		background-color: rgba(0, 0, 0, .6)
+		transition: $duration
+	&__location
+		position: absolute
+	&__img, &__location
+		width: 100%
+		height: 100%
+		img
+			width: 100%
+			height: auto
+	&__name, &__section
+		margin: 0
+.item:hover .item__tooltip
+	transform: translateY(0)
+	font-size: 100%
+	z-index: 1
+
+// Pricing Plan
+.pricing-plan
+	background-color: #f0f1f1
+	&__cost-cards
+		width: 100%
+		margin-top: 3rem
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		justify-content: space-around
+		margin-bottom: 3rem
+.cost-card
+	background-color: white
+	margin: .8rem
+	margin-top: 1.5rem
+	width: 30%
+	text-align: center
+	min-width: 310px
+	position: relative
+	overflow: hidden
+	transition: $duration
+	&__text
+		position: relative
+		margin-top: 2rem
+		margin-bottom: 4rem
+		z-index: 9999
+	&__cost
+		font-size: 2rem
+		font-weight: bold
+	&__offers
+		display: flex
+		flex-direction: column
+		text-align: center
+		align-items: center
+		color: #7a7a7a
+	&__header
+		position: absolute
+		top: -5rem
+		left: -5rem
+		background-color: $secondary-color
+		width: 50rem
+		height: 14rem
+		transform: rotate(-6deg)
+	sup
+		font-size: 1rem
+.cost-card:hover
+	box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.35)
+	transform: scale(1.05)
+.cost-card__offer
+	border-bottom: 1px solid #7a7a7a
+	padding: .75rem 
+.order-button
+	margin: 3.5rem 0
+
+// Our team
+.our-team
+	&__slider
+		position: relative
+		width: 100%
+		margin-top: 3rem
+		display: flex
+		flex-direction: row
+		overflow: hidden
+		justify-content: space-around
+		margin-bottom: 3rem
+		&__person
+			width: 31%
+			min-width: 310px
+			text-align: center
+			margin: .8rem
+			img
+				width: 100%
+				height: auto
+			h2, p
+				margin: 0
+			h2
+				margin-top: 1.5rem
+.person__social-media
+	margin-top: 1.5rem
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+.social-media__icon
+	height: 2.5rem
+	width: 2.5rem
+	margin-left: 1.8rem
+	border-radius: .7rem
+	background-color: #f0f1f1
+	background-repeat: no-repeat
+	background-position: center
+.social-media__icon	a
+	display: block
+	width: 100%
+	height: 100%
+.social-media__icon:hover
+	background-color: $secondary-color
+.facebook
+	background-image: url("../img/social-media_icons/facebook_green.png")
+	&:hover
+		background-image: url("../img/social-media_icons/facebook_white.png")
+.twitter
+	background-image: url("../img/social-media_icons/twitter_green.png")
+	&:hover
+		background-image: url("../img/social-media_icons/twitter_white.png")
+.social-dialog
+	background-image: url("../img/social-media_icons/dialog_green.png")
+	&:hover
+		background-image: url("../img/social-media_icons/dialog_white.png")
+.ball
+	background-image: url("../img/social-media_icons/ball_green.png")
+	&:hover
+		background-image: url("../img/social-media_icons/ball_white.png")
+// slider styles
+.slick-dots
+	display: flex
+	flex-direction: row
+	justify-content: center
+	list-style-type: none
+	margin-top: 6rem
+.slick-dots button
+	padding: .5rem
+	margin: .5rem
+	border-radius: 100%
+	background-color: $primary-color
+.slick-active button
+	background-color: $secondary-color
+.slick-dots button
+	font-size: 0
+button.slick-prev, button.slick-next
+	position: absolute
+	margin-top: 40.5%
+	font-size: 0
+	height: 2rem
+	filter: invert(1)
+	width: 1rem
+	z-index: 1
+button.slick-prev:hover, button.slick-next:hover
+	filter: invert(0)
+button.slick-prev
+	left: -1rem
+	top: 0
+	background: url("../img/our-team/slider buttons/prev.svg") center no-repeat
+button.slick-next
+	right: -1rem
+	top: 0
+	background: url("../img/our-team/slider buttons/next.svg") center no-repeat
+
+
+// Blog
+.blog
+	background-color: $primary-light 
+	&__wrap
+		display: flex
+		flex-direction: column
+		width: 100%
+		margin-top: 3rem
+		margin-bottom: 5rem
+		text-align: left
+	&__article:nth-child(even)
+		flex-direction: row-reverse
+	&__article
+		display: flex
+		flex-direction: row
+		width: 100%
+		&__picture
+			min-width: 310px
+			height: 30rem
+			width: 50%
+			background-size: cover
+			background-repeat: no-repeat
+			background-position: center
+			margin-right: 2rem
+		&__text
+			margin-top: 2rem
+			padding-right: 1rem
+			float: left
+			width: 53%
+			p
+				max-width: 87%
+				min-width: 310px
+.article__text__title:hover
+	color: $primary-color
+.article__text__wrap
+	display: flex
+	flex-direction: row
+	font-weight: bold
+	margin-bottom: 2rem
+.article__data, .article__subject
+	position: relative
+	margin-right: 4rem
+	margin-left: 1.5rem
+.article__data:before, .article__subject:before
+	content: ""
+	position: absolute
+	left: -1.3rem
+	bottom: .2rem
+	height: 1rem
+	width: 1rem
+	background: url("../img/blog/blog-icons/calendar.png")
+
+#first-article
+	background-image: url("../img/blog/blog-picture/seo.png")
+#second-article
+	background-image: url("../img/blog/blog-picture/computer.png")
+#third-article
+	background-image: url("../img/blog/blog-picture/also_computer.png")
+
+// Contact us
+.contact-us p
+	margin: 0
+.contact-us
+	background: url("../img/form_bg.png") center no-repeat
+	background-size: cover
+	h1
+		padding: 2rem 0
+		margin: 0
+	&__image
+		display: flex
+		justify-content: center
+		width: 6.5rem
+		height: 6.5rem
+		padding: 2rem
+		border-radius: 100%
+		background-color: $secondary-color
+		margin-bottom: 1.5rem
+	&__wrap
+		display: flex
+		flex-direction: row
+		justify-content: center
+		text-align: center
+		flex-wrap: wrap
+		margin-bottom: 2rem
+.contact-us__phone, .contact-us__addres, .contact-us__email
+	margin: 1rem
+	min-width: 310px
+	display: flex
+	flex-direction: column
+	align-items: center
+	position: relative
+	flex-basis: 20%
+	img
+		height: 100%
+		width: auto
+input, textarea
+	outline: none
+	margin: 1rem
+	border-radius: .3rem
+	border: none
+	background-color: white
+	font-size: 0.875rem
+	font-weight: bold
+	border: none
+	padding: 1.3rem 1rem
+input::placeholder, textarea::placeholder
+	font-family: 'Open Sans', sans-serif
+	color: #4d4d4d
+	font-size: 0.875rem
+form
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: center
+.form
+	&__text
+		width: 46.5%
+		min-width: 310px
+	&__email
+		width: 46.5%
+		min-width: 310px
+	&__message
+		width: 100%
+	&__button
+		padding: 1rem 4rem
+		border: none
+		background: none
+		font-size: 0.875rem
+		font-weight: bold
+		text-transform: uppercase
+		display:block
+		margin-left: auto
+		background-color: white
+
+// Кнопка мобильного меню
+#menu__mobile
+	display: none
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1336px)
+	.container 
+		padding: 0 .5rem
+@media screen and (max-width: 1063px)
+	.form__text, .form__email
+			width: 100%
+@media screen and (max-width: 1050px)
+	.our-services__cards
+		justify-content: center
+	.item, .cost-card, .our-services__card
+		width: 45%
+	.blog__article
+		flex-wrap: wrap
+		margin-bottom: 2rem
+	.blog__article__text
+		margin-top: 0
+		width: 100%
+		margin-left: 1rem
+	.blog__article__picture
+		width: 100%
+		display: none
+	.latest-works__navigation
+		text-align: left
+@media screen and (max-width: 715px)
+	.header__top
+		flex-direction: column
+	.menu
+		width: 100%
+	#menu__mobile
+		display: block
+	#menu__mobile:hover
+		color: $primary-color
+	.menu__list
+		padding: 0
+		text-align: center
+		display: none
+		flex-direction: column
+	.container 
+		padding: 0 .5rem
+	.item, .cost-card, .our-services__card
+		width: 80%
+@media screen and (max-width: 540px)
+	.item, .cost-card, .our-services__card
+		width: 90%
+@media screen and (max-width: 480px)
+	.latest-works__navigation
+		margin-top: 1rem
+		text-align: center
+	.latest-works__navigation button
+		width: 80%	
+@media screen and (max-width: 400px)
+	\:root
+		font-size: 16px
+	.latest-works__navigation button
+		width: 100%
+	.blog__article__text
+		margin-left: 0
+	.container 
+		padding: .5rem
+	.our-team__slider__person
+		margin: 0
+	.item, .cost-card, .our-services__card
+		width: 100%
